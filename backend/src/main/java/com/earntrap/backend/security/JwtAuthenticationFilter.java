@@ -70,9 +70,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                             .setAuthentication(authentication);
                 }
             }
-        } catch (io.jsonwebtoken.JwtException |
-                 IllegalArgumentException e) {
-            // Invalid or expired token: request remains unauthenticated.
+        } catch (Exception e) {
+            // Invalid, expired, or malformed token, or user not found:
+            // Request remains unauthenticated and proceeds down the filter chain.
+            // Spring Security's authorization rules will permit or deny accordingly.
+            logger.debug("JWT authentication filter: could not authenticate token - " + e.getMessage());
         }
 
         filterChain.doFilter(request, response);

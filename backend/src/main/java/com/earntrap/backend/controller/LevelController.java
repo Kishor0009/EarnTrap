@@ -24,11 +24,15 @@ public class LevelController {
         this.levelService = levelService;
     }
 
-    // Get all 60 levels for the authenticated user
+    // Get all 60 levels (user progress if authenticated, or public level catalog if unauthenticated)
     @GetMapping("/levels")
     public List<LevelResponse> getMyLevels(
             Authentication authentication
     ) {
+        if (authentication == null || authentication.getName() == null) {
+            return levelService.getPublicLevels();
+        }
+
         return levelService.getMyLevels(
                 authentication.getName()
         );

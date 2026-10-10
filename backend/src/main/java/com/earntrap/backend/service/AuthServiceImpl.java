@@ -37,11 +37,17 @@ public class AuthServiceImpl implements AuthService {
     public String register(RegisterRequest request) {
 
         if (userRepository.existsByUsername(request.getUsername())) {
-            throw new RuntimeException("Username already exists");
+            throw new org.springframework.web.server.ResponseStatusException(
+                    org.springframework.http.HttpStatus.CONFLICT,
+                    "Username already exists"
+            );
         }
 
         if (userRepository.existsByEmail(request.getEmail())) {
-            throw new RuntimeException("Email already exists");
+            throw new org.springframework.web.server.ResponseStatusException(
+                    org.springframework.http.HttpStatus.CONFLICT,
+                    "Email already exists"
+            );
         }
 
         User user = User.builder()
@@ -79,7 +85,8 @@ public class AuthServiceImpl implements AuthService {
 
         // Reject invalid credentials.
         if (user == null) {
-            throw new RuntimeException(
+            throw new org.springframework.web.server.ResponseStatusException(
+                    org.springframework.http.HttpStatus.UNAUTHORIZED,
                     "Invalid username/email or password"
             );
         }
@@ -88,7 +95,8 @@ public class AuthServiceImpl implements AuthService {
                 request.getPassword(),
                 user.getPassword()
         )) {
-            throw new RuntimeException(
+            throw new org.springframework.web.server.ResponseStatusException(
+                    org.springframework.http.HttpStatus.UNAUTHORIZED,
                     "Invalid username/email or password"
             );
         }
@@ -96,7 +104,10 @@ public class AuthServiceImpl implements AuthService {
         if (user.getStatus() == null
                 || user.getStatus() == com.earntrap.backend.enums.UserStatus.BLOCKED
                 || user.getStatus() == com.earntrap.backend.enums.UserStatus.INACTIVE) {
-            throw new RuntimeException("User account is not active");
+            throw new org.springframework.web.server.ResponseStatusException(
+                    org.springframework.http.HttpStatus.FORBIDDEN,
+                    "User account is not active"
+            );
         }
 
         String token = jwtService.generateToken(user.getUsername());

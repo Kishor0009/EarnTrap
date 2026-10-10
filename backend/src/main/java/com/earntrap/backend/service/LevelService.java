@@ -66,6 +66,35 @@ public class LevelService {
         );
     }
 
+    // Get all 60 levels with public/default status (unauthenticated view).
+    public List<LevelResponse> getPublicLevels() {
+        List<LevelResponse> levels = new ArrayList<>();
+
+        for (int number = 1; number <= 60; number++) {
+            String status;
+            if (number == 46) {
+                status = "COMING_SOON";
+            } else if (number > 46) {
+                status = "LOCKED";
+            } else if (number == 1) {
+                status = "UNLOCKED";
+            } else {
+                status = "LOCKED";
+            }
+
+            levels.add(
+                    new LevelResponse(
+                            number,
+                            "Level " + number,
+                            status,
+                            null
+                    )
+            );
+        }
+
+        return levels;
+    }
+
     // Get all 60 levels and their current statuses.
     @Transactional
     public List<LevelResponse> getMyLevels(String username) {
