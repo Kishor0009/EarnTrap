@@ -1,0 +1,387 @@
+
+.level-page {
+  min-height: 100vh;
+  background: #f6f8f7;
+  color: #202a26;
+}
+
+.level-header {
+  min-height: 76px;
+  padding: 15px clamp(18px, 5vw, 65px);
+  background: #fff;
+  border-bottom: 1px solid #e7ede9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.level-back {
+  padding: 10px 13px;
+  border: 1px solid #e1e9e3;
+  border-radius: 10px;
+  background: #fff;
+  color: #34453a;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.level-back:hover {
+  background: #f0f8f3;
+  border-color: #c2d9c9;
+}
+
+.level-back:focus-visible {
+  outline: 2px solid #137a47;
+  outline-offset: 2px;
+}
+
+.level-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.level-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  background: #137a47;
+  color: #fff;
+}
+
+.level-header-label {
+  color: #648070;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.level-content {
+  width: min(900px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 46px 0 60px;
+}
+
+.level-intro {
+  margin-bottom: 25px;
+}
+
+.level-eyebrow {
+  color: #168653;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.level-intro h1 {
+  margin: 10px 0;
+  font-size: clamp(26px, 4vw, 38px);
+  letter-spacing: -1.4px;
+}
+
+.level-intro h1 span {
+  color: #708078;
+  font-weight: 500;
+}
+
+.level-intro p {
+  max-width: 620px;
+  color: #78867d;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.lesson-card {
+  padding: clamp(16px, 3vw, 28px);
+  background: #fff;
+  border: 1px solid #e5ece7;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(24, 54, 36, 0.04);
+}
+
+.lesson-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.lesson-tag {
+  padding: 7px 10px;
+  border-radius: 7px;
+  background: #e6f6ec;
+  color: #137a47;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.lesson-duration {
+  color: #7b8980;
+  font-size: 11px;
+}
+
+.lesson-video {
+  display: block;
+  width: 100%;
+  max-height: 480px;
+  aspect-ratio: 16 / 9;
+  background: #17221d;
+  border-radius: 13px;
+  object-fit: contain;
+}
+
+.lesson-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 23px 0;
+}
+
+.lesson-details h2 {
+  margin: 7px 0;
+  font-size: 22px;
+  letter-spacing: -0.6px;
+}
+
+.lesson-details p {
+  max-width: 500px;
+  margin: 0;
+  color: #7b8980;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.reward-preview {
+  min-width: 135px;
+  padding: 15px;
+  border: 1px solid #d9efdf;
+  border-radius: 12px;
+  background: #f1faf4;
+}
+
+.reward-preview span,
+.reward-preview strong {
+  display: block;
+}
+
+.reward-preview span {
+  color: #678271;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.reward-preview strong {
+  margin-top: 8px;
+  color: #137a47;
+  font-size: 16px;
+}
+
+.lesson-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 17px 0;
+  border-top: 1px solid #edf1ee;
+}
+
+.lesson-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #859188;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.lesson-step > span {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #dce6df;
+  border-radius: 50%;
+  font-size: 10px;
+}
+
+.lesson-step.active {
+  color: #137a47;
+}
+
+.lesson-step.active > span,
+.lesson-step.done > span {
+  background: #e2f5e9;
+  border-color: #bce6ca;
+  color: #137a47;
+}
+
+.lesson-step-separator {
+  flex: 1;
+  max-width: 90px;
+  height: 1px;
+  background: #e1e9e3;
+}
+
+.level-complete-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 51px;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 11px;
+  background: #137a47;
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.level-complete-button:not(:disabled):hover {
+  background: #0e6439;
+  transform: translateY(-1px);
+}
+
+.level-complete-button:disabled {
+  background: #dfe8e2;
+  color: #78867d;
+  cursor: not-allowed;
+}
+
+.level-footnote {
+  margin: 14px 0 0;
+  color: #89958d;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.level-alert {
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  border-radius: 9px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.level-alert-error {
+  background: #fff0ef;
+  color: #a62e28;
+  border: 1px solid #f5c8c5;
+}
+
+.level-alert-success {
+  background: #e9f8ee;
+  color: #137a47;
+  border: 1px solid #c3e8d0;
+}
+
+.level-alert-warn {
+  background: #fffbeb;
+  color: #92610a;
+  border: 1px solid #f5e0a0;
+}
+
+/* Dev-only security disclaimer */
+.level-security-note {
+  margin: 14px 0 10px;
+  padding: 13px 16px;
+  border: 1px dashed #c5d9cc;
+  border-radius: 9px;
+  background: #f4f9f6;
+  color: #607068;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.level-security-note strong {
+  color: #445a4e;
+}
+
+.level-security-note code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  font-size: 10px;
+  background: #e4ede7;
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: #2e6644;
+}
+
+.level-progress-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+  margin-top: 20px;
+}
+
+.level-progress-summary > div {
+  padding: 18px;
+  border: 1px solid #e5ece7;
+  border-radius: 13px;
+  background: #fff;
+}
+
+.level-progress-summary span,
+.level-progress-summary strong {
+  display: block;
+}
+
+.level-progress-summary span {
+  color: #7b8980;
+  font-size: 11px;
+}
+
+.level-progress-summary strong {
+  margin-top: 9px;
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .level-header {
+    flex-wrap: wrap;
+  }
+
+  .level-brand {
+    font-size: 18px;
+  }
+
+  .level-header-label {
+    display: none;
+  }
+
+  .level-content {
+    padding-top: 30px;
+  }
+
+  .lesson-details {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .reward-preview {
+    width: fit-content;
+  }
+
+  .level-progress-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-step {
+    font-size: 10px;
+  }
+}

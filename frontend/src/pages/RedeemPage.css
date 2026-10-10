@@ -1,0 +1,642 @@
+/* ===== EarnTrap — Redeem Page Styles ===== */
+
+.redeem-page {
+  min-height: 100vh;
+  background: #f6f8f7;
+  color: #202a26;
+  display: flex;
+  flex-direction: column;
+}
+
+.redeem-header {
+  min-height: 76px;
+  padding: 15px clamp(18px, 5vw, 65px);
+  background: #fff;
+  border-bottom: 1px solid #e7ede9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.redeem-back {
+  padding: 10px 14px;
+  border: 1px solid #e1e9e3;
+  border-radius: 10px;
+  background: #fff;
+  color: #34453a;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
+}
+
+.redeem-back:hover {
+  background: #f0f8f3;
+  border-color: #c2d9c9;
+  transform: translateX(-1px);
+}
+
+.redeem-back:focus-visible {
+  outline: 2px solid #137a47;
+  outline-offset: 2px;
+}
+
+.redeem-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: #202a26;
+  text-decoration: none;
+}
+
+.redeem-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  background: #137a47;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.redeem-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.redeem-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 11px;
+  border-radius: 8px;
+  background: #e6f6ec;
+  color: #117846;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.redeem-content {
+  flex: 1;
+  width: min(1000px, calc(100% - 36px));
+  margin: 0 auto;
+  padding: 40px 0 60px;
+}
+
+.redeem-intro {
+  margin-bottom: 28px;
+}
+
+.redeem-intro h1 {
+  margin: 10px 0 8px;
+  font-size: clamp(28px, 4vw, 36px);
+  letter-spacing: -1.2px;
+  font-weight: 800;
+}
+
+.redeem-intro p {
+  color: #78867d;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Stats Overview Grid */
+.redeem-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.redeem-stat-card {
+  background: #fff;
+  border: 1px solid #e6ece8;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 14px rgba(24, 54, 36, 0.02);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.redeem-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(24, 54, 36, 0.05);
+}
+
+.redeem-stat-card.featured {
+  background: linear-gradient(135deg, #173b2a, #157945);
+  color: #fff;
+  border-color: #157945;
+}
+
+.redeem-stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #77847c;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.redeem-stat-card.featured .redeem-stat-top {
+  color: #a4e6c0;
+}
+
+.redeem-stat-icon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #e8f7ee;
+  color: #137a47;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.redeem-stat-card.featured .redeem-stat-icon {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.redeem-stat-value {
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  margin-bottom: 4px;
+}
+
+.redeem-stat-card small {
+  color: #8a968e;
+  font-size: 11px;
+}
+
+.redeem-stat-card.featured small {
+  color: #c0ebd2;
+}
+
+/* Eligibility Banner */
+.eligibility-card {
+  padding: 22px 24px;
+  border-radius: 16px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  border: 1px solid;
+}
+
+.eligibility-card.eligible {
+  background: #f0faf4;
+  border-color: #bce6ca;
+  color: #0f6637;
+}
+
+.eligibility-card.locked-level {
+  background: #fffbf0;
+  border-color: #f7e0a3;
+  color: #8c5d0e;
+}
+
+.eligibility-card.locked-balance {
+  background: #f4f8fb;
+  border-color: #cbe0ef;
+  color: #185a85;
+}
+
+.eligibility-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.eligibility-content {
+  flex: 1;
+}
+
+.eligibility-content h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.eligibility-content p {
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.eligibility-progress-wrap {
+  margin-top: 12px;
+  max-width: 360px;
+}
+
+.eligibility-progress-bar {
+  width: 100%;
+  height: 6px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.eligibility-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: currentColor;
+  transition: width 0.4s ease;
+}
+
+/* Two-column Section: Calculator & Guidelines */
+.redeem-form-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  margin-bottom: 34px;
+}
+
+.redeem-card {
+  background: #fff;
+  border: 1px solid #e6ece8;
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 4px 18px rgba(24, 54, 36, 0.02);
+}
+
+.redeem-card h2 {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 6px 0 16px;
+}
+
+.redeem-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #3b4e43;
+}
+
+.input-with-symbol {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-symbol {
+  position: absolute;
+  left: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #728479;
+}
+
+.input-with-symbol input {
+  width: 100%;
+  padding: 13px 14px 13px 32px;
+  border: 1.5px solid #dce8e0;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  color: #202a26;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.input-with-symbol input:focus {
+  border-color: #137a47;
+  box-shadow: 0 0 0 3px rgba(19, 122, 71, 0.12);
+}
+
+.input-with-symbol input:disabled {
+  background: #f7faf8;
+  color: #8c9c92;
+  cursor: not-allowed;
+}
+
+/* Amount Preset Chips */
+.amount-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.amount-chip {
+  padding: 6px 12px;
+  border: 1px solid #dce5df;
+  border-radius: 8px;
+  background: #fbfdfc;
+  color: #33443a;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.amount-chip:hover:not(:disabled) {
+  border-color: #137a47;
+  color: #137a47;
+  background: #f0f8f3;
+}
+
+.amount-chip:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Calculation Breakdown Card */
+.calc-breakdown {
+  background: #f7faf8;
+  border: 1px solid #e2ede6;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.calc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #63756b;
+}
+
+.calc-row strong {
+  color: #202a26;
+  font-weight: 700;
+}
+
+.calc-row.highlight {
+  padding-top: 10px;
+  border-top: 1px dashed #d5e5db;
+  color: #137a47;
+  font-size: 13px;
+}
+
+.calc-row.highlight strong {
+  color: #137a47;
+}
+
+.calc-row.highlight.disabled-payout {
+  color: #83948b;
+  border-top-color: #e2ede6;
+}
+
+.calc-row.highlight.disabled-payout strong {
+  color: #63756b;
+}
+
+.calc-note {
+  font-size: 11px;
+  line-height: 1.5;
+  padding: 10px 14px;
+  border-radius: 9px;
+  margin-top: 2px;
+}
+
+.calc-note.warning {
+  background: #fff8eb;
+  border: 1px solid #fae1aa;
+  color: #8c5d0e;
+}
+
+.calc-note.info {
+  background: #f0faf4;
+  border: 1px solid #bce6ca;
+  color: #0f6637;
+}
+
+/* Policy / Verification disclaimer */
+.verification-notice {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #85968d;
+  background: #fff;
+  border: 1px solid #edf2ee;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.verification-notice strong {
+  color: #34473c;
+}
+
+/* Guidelines Sidebar Card */
+.guidelines-card {
+  background: #fff;
+  border: 1px solid #e6ece8;
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.guidelines-card h3 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #202a26;
+  letter-spacing: -0.3px;
+}
+
+.guideline-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.guideline-dot {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  border-radius: 6px;
+  background: #e8f7ee;
+  color: #137a47;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.guideline-item div strong {
+  display: block;
+  font-size: 12px;
+  color: #24352b;
+  margin-bottom: 2px;
+}
+
+.guideline-item div p {
+  font-size: 11px;
+  line-height: 1.5;
+  color: #7b8c82;
+}
+
+/* Redemption History Section */
+.history-section {
+  margin-top: 12px;
+}
+
+.history-section .section-heading {
+  margin-bottom: 16px;
+}
+
+.history-card {
+  background: #fff;
+  border: 1px solid #e6ece8;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(24, 54, 36, 0.02);
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 12px;
+}
+
+.history-table th {
+  background: #f7faf8;
+  padding: 14px 18px;
+  color: #6a7c72;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e6ece8;
+}
+
+.history-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid #edf2ee;
+  color: #2a3a31;
+}
+
+.history-table tr:last-child td {
+  border-bottom: none;
+}
+
+.history-ref {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: #137a47;
+  font-weight: 700;
+}
+
+.history-amount {
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* Status Badges */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 9px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.status-pill.status-pending {
+  background: #fff8e6;
+  color: #9c6e07;
+  border: 1px solid #f9e2ab;
+}
+
+.status-pill.status-approved {
+  background: #e8f4fd;
+  color: #0b69a3;
+  border: 1px solid #bee0f7;
+}
+
+.status-pill.status-paid {
+  background: #e8f7ee;
+  color: #117846;
+  border: 1px solid #c2e8d2;
+}
+
+.status-pill.status-rejected {
+  background: #fdf0f0;
+  color: #b3261e;
+  border: 1px solid #f8c9c6;
+}
+
+.empty-history {
+  padding: 45px 20px;
+  text-align: center;
+  color: #829288;
+}
+
+.empty-history-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+  opacity: 0.6;
+}
+
+.empty-history h4 {
+  font-size: 15px;
+  color: #314238;
+  margin-bottom: 6px;
+}
+
+.empty-history p {
+  font-size: 12px;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .redeem-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .redeem-form-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .redeem-header {
+    padding: 14px 18px;
+  }
+
+  .redeem-content {
+    padding: 26px 0 44px;
+  }
+
+  .redeem-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .history-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
